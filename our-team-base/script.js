@@ -40,17 +40,28 @@ const team = [
 // console.log(team);
 
 // vado a selezionare il tag html di punta
-let cardImg = document.querySelector(".card-image");
+let teamContainer = document.querySelector(".team-container");
 
 //ciclo for immagini
-let teamImages = "";
+let elements = "";
 
 for (let i = 0; i < team.length; i++) {
     //console.log(team[i].foto);
-    teamImages += team[i].foto;
+    elements += `
+    <div class="team-card">
+        <div class="card-image">
+            <img src="${team[i].foto}" alt="Wayne Barnett"/>
+        </div>
+
+        <div class="card-text">
+            <h3>${team[i].nome}</h3>
+            <p>${team[i].ruolo}</p>
+        </div>
+    </div>
+    `
 }
 
-console.log(teamImages);
+// console.log(elements);
 
 //output html
-cardImg.innerHTML = teamImages;
+teamContainer.innerHTML = elements;
