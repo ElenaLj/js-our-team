@@ -5,7 +5,7 @@
 // creo array di oggetti
 const team = [
     {
-        "nome": "Wayne Barnett",
+        "nome": "Wayne Barnett", 
         "ruolo": "Founder & CEO",
         "foto": "img/wayne-barnett-founder-ceo.jpg"
     },
@@ -37,7 +37,20 @@ const team = [
 ];
 
 // controllo in console.log
-console.log(team);
+// console.log(team);
 
 // vado a selezionare il tag html di punta
-let teamCard = document.querySelector(".team-card");
+let cardImg = document.querySelector(".card-image");
+
+//ciclo for immagini
+let teamImages = "";
+
+for (let i = 0; i < team.length; i++) {
+    //console.log(team[i].foto);
+    teamImages += team[i].foto;
+}
+
+console.log(teamImages);
+
+//output html
+cardImg.innerHTML = teamImages;
